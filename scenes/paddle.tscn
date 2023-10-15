@@ -1,7 +1,17 @@
-[gd_scene format=3 uid="uid://bb2whpq7d1ofs"]
+[gd_scene load_steps=4 format=3 uid="uid://bu4ub2v3b7xep"]
 
-[node name="Paddle" type="Node2D"]
+[ext_resource type="Script" path="res://scenes/scripts/paddle.gd" id="1_3vw87"]
+[ext_resource type="Texture2D" uid="uid://roj4xjl6q53h" path="res://icon.svg" id="2_ll6uf"]
 
-[node name="Pivot" type="Node2D" parent="."]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_2jw4j"]
 
-[node name="Rod" type="Node2D" parent="."]
+[node name="Paddle" type="CharacterBody2D"]
+position = Vector2(257, 115)
+script = ExtResource("1_3vw87")
+
+[node name="Paddle" type="Sprite2D" parent="."]
+texture = ExtResource("2_ll6uf")
+
+[node name="PaddleShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_2jw4j")
+one_way_collision_margin = 0.0
