@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bb2whpq7d1ofs"]
+
+[node name="Paddle" type="Node2D"]
+
+[node name="Pivot" type="Node2D" parent="."]
+
+[node name="Rod" type="Node2D" parent="."]
