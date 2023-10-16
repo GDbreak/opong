@@ -13,4 +13,4 @@ curve = SubResource("Curve2D_avh28")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
 position = Vector2(-817.164, -10.7001)
-rotation = 0.0234731
+rotation = 0.0298878
