@@ -7,7 +7,16 @@
 [node name="Game" type="Node"]
 script = ExtResource("1_5i4ny")
 
-[node name="Goal" parent="." instance=ExtResource("3_7tyww")]
-position = Vector2(571, 291)
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Paddle" parent="Goal" instance=ExtResource("1_1825a")]
+[node name="Goal" parent="Control" instance=ExtResource("3_7tyww")]
+
+[node name="Paddle" parent="Control/Goal" instance=ExtResource("1_1825a")]
