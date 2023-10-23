@@ -4,8 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://roj4xjl6q53h" path="res://icon.svg" id="2_rk8iq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0b6dh"]
+radius = 86.56
 
 [node name="Ball" type="RigidBody2D"]
+gravity_scale = 0.0
+freeze_mode = 1
 script = ExtResource("1_cimy6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

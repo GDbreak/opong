@@ -1,7 +1,6 @@
 class_name MainMenu
 extends Control
 
-
 @onready var play_button : Button = $Play
 @onready var game_scene : PackedScene = preload(game_scene_path)
 const game_scene_path : String = "res://scenes/game.tscn"

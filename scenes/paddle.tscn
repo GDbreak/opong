@@ -3,7 +3,9 @@
 [ext_resource type="Script" path="res://scenes/scripts/paddle.gd" id="1_3vw87"]
 [ext_resource type="Texture2D" uid="uid://roj4xjl6q53h" path="res://icon.svg" id="2_ll6uf"]
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_2jw4j"]
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_mx7v2"]
+a = Vector2(65.5, 7.5)
+b = Vector2(-61.5, 7.5)
 
 [node name="Paddle" type="CharacterBody2D"]
 position = Vector2(257, 115)
@@ -13,5 +15,6 @@ script = ExtResource("1_3vw87")
 texture = ExtResource("2_ll6uf")
 
 [node name="PaddleShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("SegmentShape2D_2jw4j")
+position = Vector2(-0.5, -0.5)
+shape = SubResource("SegmentShape2D_mx7v2")
 one_way_collision_margin = 0.0
