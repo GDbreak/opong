@@ -12,7 +12,7 @@ signal rotated(rotation)
 var rotation_direction = 0
 var d := 0.0
 var speed := 2.0
-var radius = 250
+var radius = 180
 
 func _ready():
 	pass 

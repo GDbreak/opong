@@ -7,4 +7,4 @@
 script = ExtResource("1_aanhf")
 
 [node name="Paddle" parent="." instance=ExtResource("1_5s46y")]
-position = Vector2(0, 250)
+position = Vector2(0, 180)
