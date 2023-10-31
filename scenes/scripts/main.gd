@@ -6,3 +6,6 @@ extends Node
 
 func _ready():
 	pass # Replace with function body.
+
+func _replace_scene(caller, scene : PackedScene):
+	pass
