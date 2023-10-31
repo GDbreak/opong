@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4iu4yahj6hiw"]
+[gd_scene load_steps=5 format=3 uid="uid://c4iu4yahj6hiw"]
 
 [ext_resource type="Script" path="res://scenes/scripts/lobby.gd" id="1_et26t"]
 [ext_resource type="Script" path="res://scenes/scripts/options_vbox_container.gd" id="2_ojcwd"]
+[ext_resource type="Script" path="res://scenes/scripts/host_vbox_container.gd" id="3_cisva"]
+[ext_resource type="Script" path="res://scenes/scripts/join_vbox_container.gd" id="4_iwhfe"]
 
 [node name="Lobby" type="Control"]
 layout_mode = 3
@@ -50,6 +52,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 50
 alignment = 1
+script = ExtResource("3_cisva")
 
 [node name="CodeLabel" type="Label" parent="HostVboxContainer"]
 layout_mode = 2
@@ -73,6 +76,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 50
 alignment = 1
+script = ExtResource("4_iwhfe")
 
 [node name="CodeLabel" type="TextEdit" parent="JoinVboxContainer"]
 layout_mode = 2
