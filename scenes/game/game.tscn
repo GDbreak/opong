@@ -1,12 +1,12 @@
 [gd_scene load_steps=5 format=3 uid="uid://drnjb3msnllma"]
 
-[ext_resource type="Script" path="res://scenes/scripts/game.gd" id="1_e31ap"]
+[ext_resource type="Script" path="res://scenes/game/scripts/game.gd" id="1_7j8bb"]
 [ext_resource type="PackedScene" uid="uid://bm3vgiqreleo2" path="res://scenes/game/goal.tscn" id="2_dwqca"]
 [ext_resource type="PackedScene" uid="uid://bb2whpq7d1ofs" path="res://scenes/game/pivot.tscn" id="3_gfjsp"]
 [ext_resource type="PackedScene" uid="uid://fic3nln6wmvg" path="res://scenes/game/ball.tscn" id="4_tfo3t"]
 
 [node name="Game" type="Node"]
-script = ExtResource("1_e31ap")
+script = ExtResource("1_7j8bb")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3

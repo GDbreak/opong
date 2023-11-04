@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://fic3nln6wmvg"]
 
-[ext_resource type="Script" path="res://scenes/scripts/ball.gd" id="1_g3q3c"]
+[ext_resource type="Script" path="res://scenes/game/scripts/ball.gd" id="1_ksu3q"]
 [ext_resource type="Texture2D" uid="uid://roj4xjl6q53h" path="res://icon.svg" id="2_snm6v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0b6dh"]
@@ -8,8 +8,10 @@ radius = 86.56
 
 [node name="Ball" type="RigidBody2D"]
 gravity_scale = 0.0
+max_contacts_reported = 1
+contact_monitor = true
 freeze_mode = 1
-script = ExtResource("1_g3q3c")
+script = ExtResource("1_ksu3q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_snm6v")

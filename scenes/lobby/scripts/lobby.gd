@@ -21,7 +21,7 @@ func _show_hosting_menu():
 
 func _show_joining_menu():
 	options_vbox_container.visible = false
-	host_vbox_container.visible = true
+	join_vbox_container.visible = true
 
 func _start_game():
 	var current_scene = game_scene.instantiate()

@@ -1,8 +1,6 @@
 class_name Goal
 extends Node2D
 ## The goal in which the player wants to hit the ball when it is their color.
-##
-## TBD
 
 
 # Called when the node enters the scene tree for the first time.

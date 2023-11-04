@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://c4iu4yahj6hiw"]
 
-[ext_resource type="Script" path="res://scenes/scripts/lobby.gd" id="1_et26t"]
-[ext_resource type="Script" path="res://scenes/scripts/options_vbox_container.gd" id="2_ojcwd"]
-[ext_resource type="Script" path="res://scenes/scripts/host_vbox_container.gd" id="3_cisva"]
-[ext_resource type="Script" path="res://scenes/scripts/join_vbox_container.gd" id="4_iwhfe"]
+[ext_resource type="Script" path="res://scenes/lobby/scripts/lobby.gd" id="1_h1up8"]
+[ext_resource type="Script" path="res://scenes/lobby/scripts/options_vbox_container.gd" id="2_8nnep"]
+[ext_resource type="Script" path="res://scenes/lobby/scripts/host_vbox_container.gd" id="3_htypn"]
+[ext_resource type="Script" path="res://scenes/lobby/scripts/join_vbox_container.gd" id="4_kg8ex"]
 
 [node name="Lobby" type="Control"]
 layout_mode = 3
@@ -12,7 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_et26t")
+script = ExtResource("1_h1up8")
 
 [node name="OptionsVboxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -25,7 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 40
 alignment = 1
-script = ExtResource("2_ojcwd")
+script = ExtResource("2_8nnep")
 
 [node name="OptionsLabel" type="Label" parent="OptionsVboxContainer"]
 layout_mode = 2
@@ -52,7 +52,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 50
 alignment = 1
-script = ExtResource("3_cisva")
+script = ExtResource("3_htypn")
 
 [node name="CodeLabel" type="Label" parent="HostVboxContainer"]
 layout_mode = 2
@@ -76,7 +76,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 50
 alignment = 1
-script = ExtResource("4_iwhfe")
+script = ExtResource("4_kg8ex")
 
 [node name="CodeLabel" type="TextEdit" parent="JoinVboxContainer"]
 layout_mode = 2

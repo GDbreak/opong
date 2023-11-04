@@ -1,20 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bu4ub2v3b7xep"]
+[gd_scene load_steps=3 format=3 uid="uid://bu4ub2v3b7xep"]
 
-[ext_resource type="Script" path="res://scenes/scripts/paddle.gd" id="1_3vw87"]
+[ext_resource type="Script" path="res://scenes/game/scripts/paddle.gd" id="1_mg678"]
 [ext_resource type="Texture2D" uid="uid://roj4xjl6q53h" path="res://icon.svg" id="2_ll6uf"]
-
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_mx7v2"]
-a = Vector2(65.5, 7.5)
-b = Vector2(-61.5, 7.5)
 
 [node name="Paddle" type="CharacterBody2D"]
 position = Vector2(257, 115)
-script = ExtResource("1_3vw87")
+script = ExtResource("1_mg678")
 
 [node name="Paddle" type="Sprite2D" parent="."]
 texture = ExtResource("2_ll6uf")
-
-[node name="PaddleShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -0.5)
-shape = SubResource("SegmentShape2D_mx7v2")
-one_way_collision_margin = 0.0
