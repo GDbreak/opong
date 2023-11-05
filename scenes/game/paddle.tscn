@@ -1,11 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://bu4ub2v3b7xep"]
+[gd_scene load_steps=6 format=3 uid="uid://bu4ub2v3b7xep"]
 
 [ext_resource type="Script" path="res://scenes/game/scripts/paddle.gd" id="1_mg678"]
+[ext_resource type="PackedScene" uid="uid://dnyday62cgmwa" path="res://scenes/game/medium_paddle_collision_shape_2d.tscn" id="2_1dtfn"]
 [ext_resource type="Texture2D" uid="uid://roj4xjl6q53h" path="res://icon.svg" id="2_ll6uf"]
+[ext_resource type="PackedScene" uid="uid://b4301oc6fe1uv" path="res://scenes/game/weak_paddle_collision_shape_2d.tscn" id="3_jx4c4"]
+[ext_resource type="PackedScene" uid="uid://daf1l1hlcufnm" path="res://scenes/game/strong_paddle_collision_shape_2d.tscn" id="4_ycpdy"]
 
 [node name="Paddle" type="CharacterBody2D"]
-position = Vector2(257, 115)
 script = ExtResource("1_mg678")
 
 [node name="Paddle" type="Sprite2D" parent="."]
+scale = Vector2(1, 0.03)
 texture = ExtResource("2_ll6uf")
+
+[node name="WeakPaddleCollisionShape2D" parent="." instance=ExtResource("3_jx4c4")]
+position = Vector2(-30, 0)
+
+[node name="RightMediumPaddleCollisionShape2D" parent="." instance=ExtResource("2_1dtfn")]
+position = Vector2(30, 0)
+
+[node name="LeftMediumPaddleCollisionShape2D" parent="." instance=ExtResource("2_1dtfn")]
+position = Vector2(-54, 0)
+
+[node name="RightStrongPaddleCollisionShape2D" parent="." instance=ExtResource("4_ycpdy")]
+position = Vector2(54, 0)
+
+[node name="LeftStrongPaddleCollisionShape2D" parent="." instance=ExtResource("4_ycpdy")]
+position = Vector2(-64, 0)

@@ -1,3 +1,4 @@
+class_name PaddleCollisionShape2D
 extends CollisionShape2D
 ## Base class for all paddle collision shapes
 
@@ -10,5 +11,3 @@ func _ready():
 func _connect_signals():
 	pass
 
-func _process(delta):
-	pass

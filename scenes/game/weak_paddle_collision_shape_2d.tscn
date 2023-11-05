@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4301oc6fe1uv"]
+
+[ext_resource type="PackedScene" uid="uid://e85464al66r1" path="res://scenes/game/paddle_collision_shape_2d.tscn" id="1_7drpt"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xswte"]
+b = Vector2(60, 0)
+
+[node name="WeakPaddleCollisionShape2D" instance=ExtResource("1_7drpt")]
+shape = SubResource("SegmentShape2D_xswte")
+collision_speed = 1.0

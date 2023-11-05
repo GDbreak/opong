@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/game/scripts/paddle_collision_shape_2d.gd" id="1_b54ob"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_mx7v2"]
-a = Vector2(-50, 7.5)
+a = Vector2(-28.5, 7.5)
 b = Vector2(-61.5, 7.5)
 
 [node name="PaddleCollisionShape2D" type="CollisionShape2D"]
