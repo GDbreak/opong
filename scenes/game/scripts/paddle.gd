@@ -7,6 +7,7 @@ signal moved(position)
 signal rotated(rotation)
 
 @export var rotation_speed = 10
+@export var color : Color
 var rotation_direction : int = 0
 var radius : int = 180
 

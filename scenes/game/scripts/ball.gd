@@ -2,6 +2,8 @@ class_name Ball
 extends RigidBody2D
 ## the Disloyal Round Thing that refuses to go into the Goal
 
+signal volleyed
+
 @onready var screen_size = get_viewport_rect().size
 
 @export var speed : int = 10
@@ -17,8 +19,8 @@ func _ready():
 func _connect_signals():
 	self.body_shape_entered.connect(_set_force)
 
-func set_color():
-	pass
+func _set_color(color : Color):
+	modulate = color
 
 func set_speed():
 	pass
@@ -30,11 +32,19 @@ func _integrate_forces(state):
 	
 func _set_force(body_rid, body, body_shape_index, local_shape_index):
 	if (body is Paddle):
-		volleys += 1
-		var paddle_collision_object_2d = body.shape_owner_get_owner(body.shape_find_owner(body_shape_index))
-		var speed = paddle_collision_object_2d.collision_speed 
-		var impulse = Vector2(speed,speed) 
-		apply_impulse(impulse)
+		_set_color(body.color)
+		_handle_volley(body)
+		_handle_impulse(body, body_shape_index)
+
+func _handle_volley(body : Paddle):
+	volleys += 1
+	volleyed.emit(volleys, body)
+
+func _handle_impulse(body : Paddle, body_shape_index : int):
+	var paddle_collision_object_2d = body.shape_owner_get_owner(body.shape_find_owner(body_shape_index))
+	var speed = paddle_collision_object_2d.collision_speed 
+	var impulse = Vector2(speed,speed) 
+	apply_impulse(impulse)
 	
 func _physics_process(delta):
 	pass

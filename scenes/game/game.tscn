@@ -1,12 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://drnjb3msnllma"]
+[gd_scene load_steps=6 format=3 uid="uid://drnjb3msnllma"]
 
 [ext_resource type="Script" path="res://scenes/game/scripts/game.gd" id="1_7j8bb"]
 [ext_resource type="PackedScene" uid="uid://bm3vgiqreleo2" path="res://scenes/game/goal.tscn" id="2_dwqca"]
 [ext_resource type="PackedScene" uid="uid://bb2whpq7d1ofs" path="res://scenes/game/pivot.tscn" id="3_gfjsp"]
 [ext_resource type="PackedScene" uid="uid://fic3nln6wmvg" path="res://scenes/game/ball.tscn" id="4_tfo3t"]
+[ext_resource type="Script" path="res://scenes/game/scripts/timer_label.gd" id="5_l8mpq"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_7j8bb")
+
+[node name="VolleyLabel" type="Label" parent="."]
+offset_left = 576.0
+offset_top = 626.0
+offset_right = 702.0
+offset_bottom = 688.0
+text = "Volley Count"
+script = ExtResource("5_l8mpq")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
