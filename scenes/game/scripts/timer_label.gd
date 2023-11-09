@@ -2,6 +2,7 @@ class_name VolleyLabel
 extends Label
 
 @onready var ball = $"../Control/Ball"
+var current_contact
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

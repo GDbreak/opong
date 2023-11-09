@@ -17,6 +17,7 @@ func _ready():
 	randomize()
 
 func _connect_signals():
+	self.body_exited.connect(_handle_volley)
 	self.body_shape_entered.connect(_set_force)
 
 func _set_color(color : Color):
@@ -33,12 +34,12 @@ func _integrate_forces(state):
 func _set_force(body_rid, body, body_shape_index, local_shape_index):
 	if (body is Paddle):
 		_set_color(body.color)
-		_handle_volley(body)
 		_handle_impulse(body, body_shape_index)
 
 func _handle_volley(body : Paddle):
-	volleys += 1
-	volleyed.emit(volleys, body)
+	if (body is Paddle):
+		volleys += 1
+		volleyed.emit(volleys, body)
 
 func _handle_impulse(body : Paddle, body_shape_index : int):
 	var paddle_collision_object_2d = body.shape_owner_get_owner(body.shape_find_owner(body_shape_index))
