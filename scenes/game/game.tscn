@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://drnjb3msnllma"]
+[gd_scene load_steps=7 format=3 uid="uid://drnjb3msnllma"]
 
 [ext_resource type="Script" path="res://scenes/game/scripts/game.gd" id="1_7j8bb"]
 [ext_resource type="PackedScene" uid="uid://bm3vgiqreleo2" path="res://scenes/game/goal.tscn" id="2_dwqca"]
 [ext_resource type="PackedScene" uid="uid://bb2whpq7d1ofs" path="res://scenes/game/pivot.tscn" id="3_gfjsp"]
 [ext_resource type="PackedScene" uid="uid://fic3nln6wmvg" path="res://scenes/game/ball.tscn" id="4_tfo3t"]
 [ext_resource type="Script" path="res://scenes/game/scripts/timer_label.gd" id="5_l8mpq"]
+[ext_resource type="Texture2D" uid="uid://roj4xjl6q53h" path="res://icon.svg" id="6_kgyte"]
 
 [node name="Game" type="Node"]
 script = ExtResource("1_7j8bb")
@@ -35,3 +36,40 @@ grow_vertical = 2
 position = Vector2(202, 22)
 mass = 0.05
 target = NodePath("../Goal/Paddle")
+
+[node name="LeftPanel" type="Panel" parent="."]
+offset_right = 300.0
+offset_bottom = 720.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LeftPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="LeftPanel/VBoxContainer"]
+layout_mode = 2
+text = "Score"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Container" type="Control" parent="LeftPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="LeftPanel/VBoxContainer/Container"]
+position = Vector2(0, -360)
+texture = ExtResource("6_kgyte")
+
+[node name="PlayerNameLabel" type="Label" parent="LeftPanel/VBoxContainer"]
+layout_mode = 2
+text = "Player Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RightPanel" type="Panel" parent="."]
+offset_left = 980.0
+offset_right = 1280.0
+offset_bottom = 720.0

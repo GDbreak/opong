@@ -1,10 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://bm3vgiqreleo2"]
+[gd_scene load_steps=4 format=3 uid="uid://bm3vgiqreleo2"]
 
 [ext_resource type="Script" path="res://scenes/game/scripts/goal.gd" id="1_xvfff"]
 [ext_resource type="Texture2D" uid="uid://roj4xjl6q53h" path="res://icon.svg" id="2_pg0g4"]
+[ext_resource type="Script" path="res://scenes/game/scripts/goal_sprite_2d.gd" id="3_tjd1j"]
 
 [node name="Goal" type="Node2D"]
 script = ExtResource("1_xvfff")
 
 [node name="GoalSprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_pg0g4")
+script = ExtResource("3_tjd1j")
