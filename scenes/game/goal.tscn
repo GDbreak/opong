@@ -1,12 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://bm3vgiqreleo2"]
+[gd_scene load_steps=5 format=3 uid="uid://bm3vgiqreleo2"]
 
 [ext_resource type="Script" path="res://scenes/game/scripts/goal.gd" id="1_xvfff"]
-[ext_resource type="Texture2D" uid="uid://roj4xjl6q53h" path="res://icon.svg" id="2_pg0g4"]
+[ext_resource type="Texture2D" uid="uid://cdptyhur55jxi" path="res://assets/goal/layout_goal.png" id="2_u2kd6"]
 [ext_resource type="Script" path="res://scenes/game/scripts/goal_sprite_2d.gd" id="3_tjd1j"]
 
-[node name="Goal" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_8rmhx"]
+radius = 63.0
+
+[node name="Goal" type="RigidBody2D"]
+max_contacts_reported = 1
+contact_monitor = true
+can_sleep = false
+freeze = true
 script = ExtResource("1_xvfff")
 
 [node name="GoalSprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_pg0g4")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_u2kd6")
 script = ExtResource("3_tjd1j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8rmhx")

@@ -11,6 +11,7 @@ signal volleyed
 @export var force : Vector2
 
 var volleys : int = 0
+var last_contact : Paddle
 
 func _ready():
 	_connect_signals()
@@ -33,10 +34,11 @@ func _integrate_forces(state):
 	
 func _set_force(body_rid, body, body_shape_index, local_shape_index):
 	if (body is Paddle):
+		last_contact = body
 		_set_color(body.color)
 		_handle_impulse(body, body_shape_index)
 
-func _handle_volley(body : Paddle):
+func _handle_volley(body):
 	if (body is Paddle):
 		volleys += 1
 		volleyed.emit(volleys, body)
