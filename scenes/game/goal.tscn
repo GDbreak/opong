@@ -4,14 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://cdptyhur55jxi" path="res://assets/goal/layout_goal.png" id="2_u2kd6"]
 [ext_resource type="Script" path="res://scenes/game/scripts/goal_sprite_2d.gd" id="3_tjd1j"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8rmhx"]
-radius = 63.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_oornc"]
+radius = 60.407
 
-[node name="Goal" type="RigidBody2D"]
-max_contacts_reported = 1
-contact_monitor = true
-can_sleep = false
-freeze = true
+[node name="Goal" type="Area2D"]
 script = ExtResource("1_xvfff")
 
 [node name="GoalSprite2D" type="Sprite2D" parent="."]
@@ -20,4 +16,4 @@ texture = ExtResource("2_u2kd6")
 script = ExtResource("3_tjd1j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_8rmhx")
+shape = SubResource("CircleShape2D_oornc")

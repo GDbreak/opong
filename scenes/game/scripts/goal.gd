@@ -1,5 +1,5 @@
 class_name Goal
-extends RigidBody2D
+extends Area2D
 ## The goal in which the player wants to hit the ball when it is their color.
 
 signal goal_scored
@@ -19,8 +19,7 @@ func _connect_signals():
 
 func _handle_goal(body):
 	if body is Ball:
-		goal_scored.emit(body.last_contact)
-		_reset()
+		goal_scored.emit(body, body.last_contact)
 
-func _reset():
-	pass
+func _reset(body):
+	goal_sprite_2d.reset()
