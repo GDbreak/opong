@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b4301oc6fe1uv"]
+[gd_scene load_steps=4 format=3 uid="uid://b4301oc6fe1uv"]
 
 [ext_resource type="PackedScene" uid="uid://e85464al66r1" path="res://scenes/game/paddle_collision_shape_2d.tscn" id="1_7drpt"]
+[ext_resource type="AudioStream" uid="uid://cpf2awnv1ru4d" path="res://assets/sfx/weak_hit.ogg" id="2_47ayh"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_xswte"]
 b = Vector2(28, 0)
@@ -8,3 +9,6 @@ b = Vector2(28, 0)
 [node name="WeakPaddleCollisionShape2D" instance=ExtResource("1_7drpt")]
 shape = SubResource("SegmentShape2D_xswte")
 collision_speed = 1.0
+
+[node name="PaddleAudioStreamPlayer" parent="." index="0"]
+stream = ExtResource("2_47ayh")

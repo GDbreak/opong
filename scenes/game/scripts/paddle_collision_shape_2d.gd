@@ -5,9 +5,10 @@ extends CollisionShape2D
 
 @export var collision_speed : float = 0
 
+@onready var paddle_audio_stream_player = $PaddleAudioStreamPlayer
+
 func _ready():
 	pass # Replace with function body.
 
-func _connect_signals():
-	pass
-
+func play():
+	paddle_audio_stream_player.play()

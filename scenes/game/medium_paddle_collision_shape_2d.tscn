@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dnyday62cgmwa"]
+[gd_scene load_steps=4 format=3 uid="uid://dnyday62cgmwa"]
 
 [ext_resource type="PackedScene" uid="uid://e85464al66r1" path="res://scenes/game/paddle_collision_shape_2d.tscn" id="1_nt0j1"]
+[ext_resource type="AudioStream" uid="uid://b8g10ustmj5rg" path="res://assets/sfx/medium_hit.ogg" id="2_veea4"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_k2s4k"]
 b = Vector2(30, 0)
@@ -8,3 +9,6 @@ b = Vector2(30, 0)
 [node name="MediumPaddleCollisionShape2D" instance=ExtResource("1_nt0j1")]
 shape = SubResource("SegmentShape2D_k2s4k")
 collision_speed = 10.0
+
+[node name="PaddleAudioStreamPlayer" parent="." index="0"]
+stream = ExtResource("2_veea4")

@@ -48,6 +48,7 @@ func _on_body_exited(body):
 
 func _handle_impulse(body : Paddle, body_shape_index : int):
 	var paddle_collision_object_2d = body.shape_owner_get_owner(body.shape_find_owner(body_shape_index))
+	paddle_collision_object_2d.play()
 	var speed = paddle_collision_object_2d.collision_speed 
 	var impulse = Vector2(speed,speed) 
 	apply_impulse(impulse)

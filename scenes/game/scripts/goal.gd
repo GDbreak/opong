@@ -20,6 +20,7 @@ func _connect_signals():
 func _handle_goal(body):
 	if body is Ball:
 		goal_scored.emit(body, body.last_contact)
+		_reset()
 
-func _reset(body):
+func _reset():
 	goal_sprite_2d.reset()
