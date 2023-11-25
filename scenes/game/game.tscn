@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://drnjb3msnllma"]
+[gd_scene load_steps=10 format=3 uid="uid://drnjb3msnllma"]
 
 [ext_resource type="Script" path="res://scenes/game/scripts/game.gd" id="1_7j8bb"]
 [ext_resource type="PackedScene" uid="uid://bm3vgiqreleo2" path="res://scenes/game/goal.tscn" id="2_dwqca"]
@@ -7,6 +7,12 @@
 [ext_resource type="Script" path="res://scenes/game/scripts/timer_label.gd" id="5_l8mpq"]
 [ext_resource type="Texture2D" uid="uid://q16rtemob3kv" path="res://assets/ability_icons/phase_icon_red.png" id="6_pqnda"]
 [ext_resource type="Texture2D" uid="uid://cil68fv27kwes" path="res://assets/bkgd/layout_bkgd.png" id="7_ks6r1"]
+[ext_resource type="PackedScene" uid="uid://j73ay18vg3cv" path="res://scenes/game/ball_trail.tscn" id="7_qc2an"]
+
+[sub_resource type="Curve" id="Curve_b435n"]
+bake_resolution = 16
+_data = [Vector2(0, 0), 0.0, 0.981271, 0, 0, Vector2(1, 1), 1.02105, 0.0, 0, 0]
+point_count = 2
 
 [node name="Game" type="Node"]
 script = ExtResource("1_7j8bb")
@@ -48,6 +54,13 @@ grow_vertical = 2
 position = Vector2(131, 109)
 mass = 0.05
 target = NodePath("../Goal/Paddle")
+
+[node name="BallTrail" parent="Control/Ball" instance=ExtResource("7_qc2an")]
+show_behind_parent = true
+position = Vector2(-771, -469)
+width = 32.0
+width_curve = SubResource("Curve_b435n")
+length = 10
 
 [node name="LeftPanelVbox" type="VBoxContainer" parent="."]
 anchors_preset = 9

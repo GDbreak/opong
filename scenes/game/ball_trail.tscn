@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://j73ay18vg3cv"]
+
+[ext_resource type="Script" path="res://scenes/game/scripts/ball_trail.gd" id="1_oax0r"]
+
+[node name="Line2D" type="Line2D"]
+script = ExtResource("1_oax0r")
