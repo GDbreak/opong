@@ -3,7 +3,7 @@ extends Control
 
 @onready var play_button : Button = $Play
 @onready var lobby_scene : PackedScene = preload(lobby_scene_path)
-const lobby_scene_path : String = "res://scenes/lobby/lobby.tscn"
+const lobby_scene_path : String = "res://scenes/lobby/lobby_ui.tscn"
 
 func _ready():
 	play_button.pressed.connect(_start_game)
@@ -14,5 +14,5 @@ func _process(_delta):
 
 func _start_game():
 	var current_scene = lobby_scene.instantiate()
-	get_tree().get_root().add_child(current_scene)
+	get_parent().add_child(current_scene)
 	self.queue_free()

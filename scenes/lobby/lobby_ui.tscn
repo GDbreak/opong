@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://c4iu4yahj6hiw"]
 
-[ext_resource type="Script" path="res://scenes/lobby/scripts/lobby.gd" id="1_h1up8"]
-[ext_resource type="Script" path="res://scenes/lobby/scripts/options_vbox_container.gd" id="2_8nnep"]
-[ext_resource type="Script" path="res://scenes/lobby/scripts/host_vbox_container.gd" id="3_htypn"]
-[ext_resource type="Script" path="res://scenes/lobby/scripts/join_vbox_container.gd" id="4_kg8ex"]
+[ext_resource type="Script" path="res://scenes/lobby/scripts/lobby_ui.gd" id="1_06nlp"]
+[ext_resource type="Script" path="res://scenes/lobby/scripts/options_vbox_container.gd" id="2_qnwot"]
+[ext_resource type="Script" path="res://scenes/lobby/scripts/host_vbox_container.gd" id="3_2mwn7"]
+[ext_resource type="Script" path="res://scenes/lobby/scripts/join_vbox_container.gd" id="4_pgbkf"]
 
 [node name="Lobby" type="Control"]
 layout_mode = 3
@@ -12,7 +12,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_h1up8")
+script = ExtResource("1_06nlp")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 2
+offset_left = 25.0
+offset_top = 191.0
+offset_right = 395.0
+offset_bottom = 235.0
+placeholder_text = "Name"
 
 [node name="OptionsVboxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -25,7 +33,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 40
 alignment = 1
-script = ExtResource("2_8nnep")
+script = ExtResource("2_qnwot")
 
 [node name="OptionsLabel" type="Label" parent="OptionsVboxContainer"]
 layout_mode = 2
@@ -52,7 +60,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 50
 alignment = 1
-script = ExtResource("3_htypn")
+script = ExtResource("3_2mwn7")
 
 [node name="CodeLabel" type="Label" parent="HostVboxContainer"]
 layout_mode = 2
@@ -76,7 +84,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 50
 alignment = 1
-script = ExtResource("4_kg8ex")
+script = ExtResource("4_pgbkf")
 
 [node name="CodeLabel" type="TextEdit" parent="JoinVboxContainer"]
 layout_mode = 2

@@ -8,9 +8,9 @@ radius = 31.0
 
 [node name="Ball" type="RigidBody2D"]
 gravity_scale = 0.0
+freeze_mode = 1
 max_contacts_reported = 1
 contact_monitor = true
-freeze_mode = 1
 script = ExtResource("1_ksu3q")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

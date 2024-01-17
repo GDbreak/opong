@@ -24,7 +24,6 @@ func _on_goal_scored(ball : Ball, paddle : Paddle):
 	var newBall = Ball.new()
 	control.add_child(newBall)
 	ball.serve()
-	
-	
+
 func _set_score_label_text(body : Paddle):
 	left_score_label.text = str(int(left_score_label.text) + 1)

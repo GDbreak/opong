@@ -5,7 +5,7 @@ extends Node
 ## TBD
 
 func _ready():
-	pass # Replace with function body.
+	pass
 
 func _replace_scene(caller, scene : PackedScene):
 	pass

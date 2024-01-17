@@ -1,9 +1,11 @@
-class_name Lobby
+class_name LobbyUI
 extends Control
+
 
 @onready var options_vbox_container = $OptionsVboxContainer
 @onready var host_vbox_container = $HostVboxContainer
 @onready var join_vbox_container = $JoinVboxContainer
+@onready var name_text_edit = $TextEdit
 @onready var game_scene : PackedScene = preload(game_scene_path)
 const game_scene_path : String = "res://scenes/game/game.tscn"
 
@@ -16,14 +18,15 @@ func _connect_signals():
 	host_vbox_container.start_game.connect(_start_game)
 	
 func _show_hosting_menu():
+	Lobby.create_game()
 	options_vbox_container.visible = false
 	host_vbox_container.visible = true
 
 func _show_joining_menu():
+	Lobby.join_game()
 	options_vbox_container.visible = false
 	join_vbox_container.visible = true
 
 func _start_game():
-	var current_scene = game_scene.instantiate()
-	get_tree().get_root().add_child(current_scene)
+	Lobby.load_game.rpc(game_scene_path)
 	self.queue_free()
