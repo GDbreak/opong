@@ -8,16 +8,24 @@ signal rotated(rotation)
 
 @export var rotation_speed = 10
 @export var color : Color
+
 var rotation_direction : int = 0
 var radius : int = 180
 
+var _id = -1
+
 func _ready():
-	pass 
+	pass
+
+func init(id : int):
+	_id = id
 
 func get_input():
 	rotation_direction = Input.get_axis("rotate_clockwise", "rotate_counterclockwise")
 
 func _process(delta):
-	get_input()
-	rotation += rotation_direction * rotation_speed * delta
+	if _id == multiplayer.get_unique_id():
+		get_input()
+		rotation += rotation_direction * rotation_speed * delta
+		move_and_collide(delta)
 

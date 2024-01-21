@@ -16,6 +16,7 @@ point_count = 2
 
 [node name="Game" type="Node"]
 script = ExtResource("1_7j8bb")
+pivot_scene = ExtResource("3_gfjsp")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -48,12 +49,13 @@ grow_vertical = 2
 
 [node name="Goal" parent="Control" instance=ExtResource("2_dwqca")]
 
-[node name="Paddle" parent="Control/Goal" instance=ExtResource("3_gfjsp")]
+[node name="0" type="Node2D" parent="Control/Goal" groups=["PlayerSpawnPoint"]]
 
-[node name="Ball" parent="Control" node_paths=PackedStringArray("target") instance=ExtResource("4_tfo3t")]
+[node name="1" type="Node2D" parent="Control/Goal" groups=["PlayerSpawnPoint"]]
+
+[node name="Ball" parent="Control" instance=ExtResource("4_tfo3t")]
 position = Vector2(131, 109)
 mass = 0.05
-target = NodePath("../Goal/Paddle")
 
 [node name="BallTrail" parent="Control/Ball" instance=ExtResource("7_qc2an")]
 show_behind_parent = true

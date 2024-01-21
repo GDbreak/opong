@@ -1,10 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://bb2whpq7d1ofs"]
+[gd_scene load_steps=4 format=3 uid="uid://bb2whpq7d1ofs"]
 
 [ext_resource type="Script" path="res://scenes/game/scripts/pivot.gd" id="1_cbm2j"]
 [ext_resource type="PackedScene" uid="uid://bu4ub2v3b7xep" path="res://scenes/game/paddle.tscn" id="2_3xpdt"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_4mrpi"]
+properties/0/path = NodePath("Paddle:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("Paddle:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:rotation")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath(".:position")
+properties/3/spawn = true
+properties/3/replication_mode = 1
 
 [node name="Pivot" type="Node2D"]
 script = ExtResource("1_cbm2j")
 
 [node name="Paddle" parent="." instance=ExtResource("2_3xpdt")]
 position = Vector2(0, 180)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_4mrpi")

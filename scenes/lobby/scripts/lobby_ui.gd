@@ -18,11 +18,13 @@ func _connect_signals():
 	host_vbox_container.start_game.connect(_start_game)
 	
 func _show_hosting_menu():
+	Lobby.player_info["name"] = name_text_edit.text
 	Lobby.create_game()
 	options_vbox_container.visible = false
 	host_vbox_container.visible = true
 
 func _show_joining_menu():
+	Lobby.player_info["name"] = name_text_edit.text
 	Lobby.join_game()
 	options_vbox_container.visible = false
 	join_vbox_container.visible = true
