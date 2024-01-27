@@ -18,7 +18,7 @@ func _ready():
 	ball_initial_position = position
 	_connect_signals()
 	randomize()
-	serve()
+	#serve()
 
 func _connect_signals():
 	body_exited.connect(_on_body_exited)

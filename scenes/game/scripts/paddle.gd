@@ -27,5 +27,4 @@ func _process(delta):
 	if _id == multiplayer.get_unique_id():
 		get_input()
 		rotation += rotation_direction * rotation_speed * delta
-		move_and_collide(delta)
 
